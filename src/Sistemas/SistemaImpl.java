@@ -34,13 +34,21 @@ public class SistemaImpl implements Sistema {
     public void menu() {
 
         int cerrar = -1;
+        int opcionInt = 0;
 
         while (cerrar !=0) {
 
-            StdOut.println("~~~~~Bienvenido~~~~~\n*¿Qué desea hacer?\n\n|1| Agregar Instrumento \n|2| Vender Instrumento \n|3| Consultar Inventario \n|4| Cierre \n");
-            int opcion = StdIn.readInt();
+            //validacion por si ingresan un caracter no numerico
+            try {
+                StdOut.println("~~~~~Bienvenido~~~~~\n*¿Qué desea hacer?\n\n|1| Agregar Instrumento \n|2| Vender Instrumento \n|3| Consultar Inventario \n|4| Cierre \n");
+                String opcionString = StdIn.readString();
+                opcionInt = Integer.parseInt(opcionString);
+            }catch (Exception e){
+                StdOut.println("Ingrese un dato valido");
+                continue;
+            }
 
-            switch (opcion) {
+            switch (opcionInt) {
 
                 case 1:
                     int salirAgregarInstrumento = 1;
@@ -80,21 +88,33 @@ public class SistemaImpl implements Sistema {
      */
     public void venderInstrumento(){
 
-        StdOut.println("Ingrese el código del instrumento a vender");
-        int codigo = StdIn.readInt();
+        int codigoInt = 0;
+
+        //validacion por si ingresan un dato no numerico
+        while(true) {
+
+            try{
+            StdOut.println("Ingrese el código del instrumento a vender");
+            String codigoString = StdIn.readString();
+            codigoInt = Integer.parseInt(codigoString);
+
+            }catch (Exception e){
+                StdOut.println("Ingrese un codigo de numeros.");
+            }
+            break;
+        }
 
         //creo un instrumento que será igual al instrumento que me devuelvan por su codigo
-        Instrumento instrumento = listaInstrumentos.obtener(codigo);
-
-        boolean buscar = listaInstrumentos.buscar(codigo);
+        Instrumento instrumento = listaInstrumentos.obtener(codigoInt);
+        boolean buscar = listaInstrumentos.buscar(codigoInt);
 
 
         if(buscar){
 
-            if(listaInstrumentos.obtener(codigo).getStock() == 0){
+            if(listaInstrumentos.obtener(codigoInt).getStock() == 0){
                 StdOut.println("El producto está agotado.");
             }
-            listaInstrumentos.eliminar(codigo);
+            listaInstrumentos.eliminar(codigoInt);
 
 
 
