@@ -52,7 +52,7 @@ public class Instrumento {
 
     /**
      * metodo que retorna el precio
-     * @return
+     * @return el precio
      */
     public int getPrecio() {
         return precio;
@@ -60,7 +60,7 @@ public class Instrumento {
 
     /**
      * metodo que cambia el precio
-     * @param precio
+     * @param precio cambia el precio
      */
     public void setPrecio(int precio) {
         this.precio = precio;

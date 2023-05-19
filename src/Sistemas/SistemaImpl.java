@@ -2,6 +2,7 @@ package Sistemas;
 import Codigo.*;
 import ucn.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class SistemaImpl implements Sistema {
@@ -10,6 +11,10 @@ public class SistemaImpl implements Sistema {
      * Lista de instrumentos
      */
     private ListaInstrumentos listaInstrumentos;
+    /**
+     * Archvivo el cual se leen instrumentos
+     */
+    private ArchivoEntrada archivoEntrada;
 
     /**
      * CONSTRUCTOR
@@ -114,10 +119,12 @@ public class SistemaImpl implements Sistema {
         StdOut.println("Precio: $" + precio);
     }
 
+
     /**
      * Metodo que lee el archivo .csv
      */
-    public void leerArchivo(){
+    public void leerArchivo() throws IOException {
+
 
        /*
     codigo= 0,1234567890
@@ -132,6 +139,33 @@ public class SistemaImpl implements Sistema {
     altura = null
      */
         //todo dentro hay que colocar el poner el agregar
+        archivoEntrada = new ArchivoEntrada("instrumentos.csv");
+
+        while(!archivoEntrada.isEndFile()){
+            //no recordaba que se ponia para leerlo xD
+            Registro registro = new Registro(2);
+            int codigo =7; //le puse valores al azar para que no saliera error
+            int precio =5;
+            int stock =5;
+            String tipo = "f";
+            String nombre = "a";
+
+            /*esto te sirve, si el nombre con el que se ingresó es cuerda, viento o percusion, tiene que omitir los
+            espacios, ya que no todos tienen los mismo atributos, y ahi mismo creas los objetos y los agregas
+
+             */
+            if(tipo.equalsIgnoreCase("cuerda")){
+
+
+            } else if (tipo.equalsIgnoreCase("viento")) {
+
+
+            } else if (tipo.equalsIgnoreCase("percusion")) {
+
+
+            }
+
+        }
 
 
     }
