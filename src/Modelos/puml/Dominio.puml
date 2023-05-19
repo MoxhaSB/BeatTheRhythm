@@ -1,0 +1,46 @@
+@startuml
+skin rose
+
+object BeatTheRhythm{
+    inventario
+}
+
+object Instrumento{
+    Nombre
+    codigo
+    precio
+    stock
+    Percusion
+    Viento
+    Cuerda
+
+}
+
+object Percusion{
+    tipoPercusion
+    materialConstruccion
+    altura
+
+}
+
+object Viento{
+    materialConstruccion
+
+}
+
+object Cuerda{
+    tipoCuerda
+    numCuerda
+    materialConstruccion
+    tipo
+
+}
+
+BeatTheRhythm --> Instrumento : guarda
+Instrumento --> Percusion : puede ser
+Instrumento --> Viento : puede ser
+Instrumento --> Cuerda : puede ser
+
+
+
+@enduml

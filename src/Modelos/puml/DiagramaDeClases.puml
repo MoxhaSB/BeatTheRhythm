@@ -1,0 +1,56 @@
+@startuml
+skin rose
+
+package codigo {
+
+class ListaInstrumentos{
+
+}
+
+class Instrumento{
+
+}
+
+class Percusion{
+
+}
+
+class Viento{
+
+}
+
+class Cuerda{
+
+}
+
+ListaInstrumentos o--> Instrumento
+Instrumento --> Percusion
+Instrumento --> Viento
+Instrumento --> Cuerda
+
+}
+
+SistemaImpl --> ListaInstrumentos
+
+package Sistema{
+
+Interface Sistema{
+    +menu() : void
+    +venderInstrumento() : void
+    +leerArchivo() : void
+    +boleta(int precio, Instrumento instrumento) : void
+
+
+}
+
+class SistemaImpl implements Sistema{
+
+    +SistemaImpl()
+     -leerDato : Scanner
+     -listaInstrumentos : ListaInstrumentos
+
+}
+
+
+
+@enduml
