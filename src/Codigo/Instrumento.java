@@ -35,57 +35,10 @@ public class Instrumento {
     }
 
     /**
-     * metodo que retorna el codigo
+     * metodo que retona los datos del instrumento
      * @return
      */
-    public int getCodigo() {
-        return codigo;
-    }
-
-    /**
-     * metodo que modifica un codigo
-     * @param codigo
-     */
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    /**
-     * metodo que retorna el precio
-     * @return el precio
-     */
-    public int getPrecio() {
-        return precio;
-    }
-
-    /**
-     * metodo que cambia el precio
-     * @param precio cambia el precio
-     */
-    public void setPrecio(int precio) {
-        this.precio = precio;
-    }
-
-    /**
-     * metodo que retorna el stock (cantidad de instrumentos)
-     * @return
-     */
-    public int getStock() {
-        return stock;
-    }
-
-    /**
-     * metodo qque retorna el nombre
-     * @return nombre del instrumento
-     */
-    public String getNombre(){
-        return this.nombre;
-    }
-
     public String toString(){
-        return "Nombre: " + this.nombre +
-                "\nCódigo: " + this.codigo +
-                "\nStock: " + this.stock +
-                "\nPrecio: " + this.precio;
+        return "Nombre: " + this.nombre + " Código: " + this.codigo + " Stock: " + this.stock + " Precio: " + this.precio;
     }
 }

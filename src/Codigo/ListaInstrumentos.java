@@ -124,20 +124,20 @@ public class ListaInstrumentos {
     public void desplegarInstrumentos(){
 
         //verificar instancia del instrumento TODO AAAAAAAAAAAAAAAAAAA
-        for (int i = 0; i <cantidadActual ; i++) {
+        for (int i = 0; i <this.cantidadActual ; i++) {
 
 
-            if (listaInstrumento[i] instanceof Cuerda) {
-                StdOut.println("Los productos de cuerda son:\n");
-                StdOut.println(listaInstrumento[i].toString());
+            if (this.listaInstrumento[i] instanceof Cuerda) {
+                StdOut.println("|CUERDA| :\n");
+                StdOut.println(this.listaInstrumento[i].toString());
 
-            } else if (listaInstrumento[i] instanceof Viento) {
-                StdOut.println("Los productos de viento son:\n");
-                StdOut.println(listaInstrumento[i].toString());
+            } else if (this.listaInstrumento[i] instanceof Viento) {
+                StdOut.println("|VIENTO| :\n");
+                StdOut.println(this.listaInstrumento[i].toString());
 
-            } else if (listaInstrumento[i] instanceof Percusion) {
-                StdOut.println("Los productos de percusion son:\n");
-                StdOut.println(listaInstrumento[i].toString());
+            } else if (this.listaInstrumento[i] instanceof Percusion) {
+                StdOut.println("|PERCUSION| :\n");
+                StdOut.println(this.listaInstrumento[i].toString());
 
             }
 

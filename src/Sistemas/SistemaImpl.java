@@ -65,7 +65,7 @@ public class SistemaImpl implements Sistema {
 
                 case 3:
 
-                    //hacer consultar inventario
+                    consultarInventario();
                     break;
 
                 case 4:
@@ -192,29 +192,9 @@ public class SistemaImpl implements Sistema {
 
     /**
      * Método que muestra el inventario
-     *///TODO AAAAAAAAAAAAA
-    public void consultarInventario(int cantidadActual){
-
-//verificar instancia del instrumento
-        for (int i = 0; i <cantidadActual ; i++) {
-
-           /*
-           if (listaInstrumentos[i] instanceof Cuerda) {
-
-
-           } else if (ListaInstrumentos[i] instanceof Viento) {
-
-           } else if (ListaInstrumentos[i] instanceof Percusion) {
-
-           }
-
-
-            */
-
-        }
-
-
-
+     */
+    public void consultarInventario(){
+        listaInstrumentos.desplegarInstrumentos();
     }
 
     /**
