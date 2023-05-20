@@ -123,7 +123,7 @@ public class ListaInstrumentos {
      */
     public void desplegarInstrumentos(){
 
-        //verificar instancia del instrumento TODO AAAAAAAAAAAAAAAAAAA
+        //verificar instancia del instrumento
         for (int i = 0; i <this.cantidadActual ; i++) {
 
 
@@ -144,6 +144,15 @@ public class ListaInstrumentos {
 
         }
 
+    }
+
+    /**
+     * metodo que retorna el isntrumento segun su posicion
+     * @param i la posicion de la lista
+     * @return el instrumento
+     */
+    public Instrumento entregarInstrumento(int i){
+        return listaInstrumento[i];
     }
 
 }

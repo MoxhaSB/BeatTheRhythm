@@ -37,6 +37,27 @@ public class Percusion extends Instrumento{
         this.altura = altura;
     }
 
+    /**
+     * metodo que retorna el tipo de percusion del instrumento
+     * @return tipo de percusion
+     */
+    public String getTipoPercusion() {
+        return tipoPercusion;
+    }
 
-    //TODO GETTERS Y SETTERS
+    /**
+     * metodo que retorna el material del cual se construyo el instrumento
+     * @return material del insturmento
+     */
+    public String getMaterialConsutruccion() {
+        return materialConsutruccion;
+    }
+
+    /**
+     * metodo que retorna si la altura del instrumento
+     * @return definida o indefinida
+     */
+    public String getAltura() {
+        return altura;
+    }
 }
