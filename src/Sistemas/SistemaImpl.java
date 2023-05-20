@@ -60,12 +60,12 @@ public class SistemaImpl implements Sistema {
 
                 case 2:
 
-                    venderInstrumento();
+                    venderInstrumento(); //TERMINADO
                     break;
 
                 case 3:
 
-                    consultarInventario();
+                    consultarInventario(); //TERMINADO
                     break;
 
                 case 4:
@@ -194,7 +194,62 @@ public class SistemaImpl implements Sistema {
      * Método que muestra el inventario
      */
     public void consultarInventario(){
-        listaInstrumentos.desplegarInstrumentos();
+
+        int opcionInt = -1;
+        while(true) {
+
+            try {
+                StdOut.println("Consultar Inventario:\n");
+                StdOut.print("|1| Desplegar los instrumentos\n |2| Buscar instrumento por Codigo\n |3| volver\nIngrese una opcion: ");
+                String opcionString = StdIn.readString();
+                opcionInt = Integer.parseInt(opcionString);
+
+            } catch (Exception e) {
+                StdOut.println("Ingrese una opcion valida.");
+            }
+
+            switch (opcionInt) {
+
+                case 1: //desplegar instrumentos
+
+                    listaInstrumentos.desplegarInstrumentos();
+                    break;
+
+                case 2: // buscar instrumento
+
+                    while (true) {
+                        int codigo = -1;
+                        while (true) {
+                            try {
+                                StdOut.println("Ingrese el codigo del instrumento");
+                                String codigoString = StdIn.readString();
+                                codigo = Integer.parseInt(codigoString);
+
+                            } catch (Exception e) {
+                                StdOut.println("|ERROR| Los codigos son numericos");
+
+                            }
+                            break;
+                        }
+                        if (listaInstrumentos.buscar(codigo)) {
+                            listaInstrumentos.obtener(codigo).toString();
+                            break;
+
+                        } else if (!listaInstrumentos.buscar(codigo)) {
+                            StdOut.println("El instrumento no existe");
+                        }
+                    }
+                    break;
+
+                case 3: //volver
+
+                    break;
+
+                default:
+                    StdOut.println("Ingrese una opción válida");
+            }
+
+        }
     }
 
     /**

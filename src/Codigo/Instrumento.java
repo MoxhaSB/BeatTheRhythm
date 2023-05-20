@@ -35,6 +35,38 @@ public class Instrumento {
     }
 
     /**
+     * metodo que retorna el codigo
+     * @return el codigo
+     */
+    public int getCodigo() {
+        return codigo;
+    }
+
+    /**
+     * metodo que retorna el precio
+     * @return el precio
+     */
+    public int getPrecio() {
+        return precio;
+    }
+
+    /**
+     * metodo que retorna el stock (cantidad de instrumentos)
+     * @return el stock del instrumento
+     */
+    public int getStock() {
+        return stock;
+    }
+
+    /**
+     * metodo qque retorna el nombre
+     * @return nombre del instrumento
+     */
+    public String getNombre(){
+        return this.nombre;
+    }
+
+    /**
      * metodo que retona los datos del instrumento
      * @return
      */
