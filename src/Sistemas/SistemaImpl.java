@@ -101,43 +101,60 @@ public class SistemaImpl implements Sistema {
     public void venderInstrumento(){
 
         int codigoInt = 0;
-
-        //validacion por si ingresan un dato no numerico
+        boolean terminar = false;
+        Instrumento instrumento = null;
         while(true) {
+            //validacion por si ingresan un dato no numerico
+            while(true) {
 
-            try{
-            StdOut.println("Ingrese el código del instrumento a vender");
-            String codigoString = StdIn.readString();
-            codigoInt = Integer.parseInt(codigoString);
+                try{
+                 StdOut.println("Ingrese el código del instrumento a vender (000 para VOLVER)");
+                    String codigoString = StdIn.readString();
+                    codigoInt = Integer.parseInt(codigoString);
 
-            }catch (Exception e){
-                StdOut.println("Ingrese un codigo de numeros.");
+                    }catch (Exception e){
+                     StdOut.println("Ingrese un codigo de numeros.");
+                     continue;
+                }
+                break;
             }
-            break;
-        }
 
-        //creo un instrumento que será igual al instrumento que me devuelvan por su codigo
-        Instrumento instrumento = listaInstrumentos.obtener(codigoInt);
-        boolean buscar = listaInstrumentos.buscar(codigoInt);
+            if(codigoInt == 000){
+                terminar = true;
+                break;
 
-
-        if(buscar){
-
-            if(listaInstrumentos.obtener(codigoInt).getStock() == 0){
-                StdOut.println("El producto está agotado.");
             }
-            listaInstrumentos.eliminar(codigoInt);
 
+            //creo un instrumento que será igual al instrumento que me devuelvan por su codigo
+            instrumento = listaInstrumentos.obtener(codigoInt);
 
-
-        }else{
-            StdOut.println("El producto no existe\n");
-            return;
+            if (instrumento == null) {
+                StdOut.println("El producto no existe");
+            }else{
+                break;
+            }
         }
+        while(!terminar) {
+            boolean buscar = listaInstrumentos.buscar(codigoInt);
 
-        //se crea la boleta
-        boleta(instrumento.getPrecio(),instrumento );
 
+            if (buscar) {
+
+                if (listaInstrumentos.obtener(codigoInt).getStock() == 0) {
+                    StdOut.println("El producto está agotado.");
+                }
+                listaInstrumentos.eliminar(codigoInt);
+
+
+            } else {
+                StdOut.println("El producto no existe\n");
+                return;
+            }
+
+            //se crea la boleta
+            boleta(instrumento.getPrecio(), instrumento);
+            terminar = true;
+        }
     }
 
     /**
@@ -244,7 +261,8 @@ public class SistemaImpl implements Sistema {
                 opcionInt = Integer.parseInt(opcionString);
 
             } catch (Exception e) {
-                StdOut.println("Ingrese una opcion valida.");
+                StdOut.println("Ingrese una opcion valida.\n");
+                continue;
             }
 
             switch (opcionInt) {
@@ -267,7 +285,7 @@ public class SistemaImpl implements Sistema {
 
                             } catch (Exception e) {
                                 StdOut.println("|ERROR| Los codigos son numericos");
-
+                                continue;
                             }
                             break;
                         }

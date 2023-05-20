@@ -47,11 +47,16 @@ public class ListaInstrumentos {
 
             Instrumento instrumento = this.listaInstrumento[i];
 
-            if (instrumento.getCodigo() == codigo){
-                return instrumento;
-            }
+            if(instrumento != null) {
 
+                if (instrumento.getCodigo() == codigo) {
+                    return instrumento;
+                }
+            }else{
+                break;
+            }
         }
+
 
         return null;
     }
