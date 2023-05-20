@@ -24,9 +24,9 @@ class Cuerda{
 }
 
 ListaInstrumentos o--> Instrumento
-Instrumento --> Percusion
-Instrumento --> Viento
-Instrumento --> Cuerda
+Instrumento <-- Percusion
+Instrumento <-- Viento
+Instrumento <-- Cuerda
 
 }
 
@@ -46,7 +46,6 @@ Interface Sistema{
 class SistemaImpl implements Sistema{
 
     +SistemaImpl()
-     -leerDato : Scanner
      -listaInstrumentos : ListaInstrumentos
 
 }

@@ -37,9 +37,9 @@ object Cuerda{
 }
 
 BeatTheRhythm --> Instrumento : guarda
-Instrumento --> Percusion : puede ser
-Instrumento --> Viento : puede ser
-Instrumento --> Cuerda : puede ser
+Instrumento <-- Percusion : puede ser
+Instrumento <-- Viento : puede ser
+Instrumento <-- Cuerda : puede ser
 
 
 

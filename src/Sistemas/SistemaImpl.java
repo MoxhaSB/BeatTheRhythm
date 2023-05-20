@@ -12,10 +12,6 @@ public class SistemaImpl implements Sistema {
      * Lista de instrumentos
      */
     private ListaInstrumentos listaInstrumentos;
-    /**
-     * Archvivo el cual se leen instrumentos
-     */
-    //private ArchivoEntrada archivoEntrada;
 
     /**
      * CONSTRUCTOR
@@ -43,7 +39,7 @@ public class SistemaImpl implements Sistema {
             while(true) {
                 //validacion por si ingresan un caracter no numerico
                 try {
-                    StdOut.println("~~~~~Bienvenido~~~~~\n*¿Qué desea hacer?\n\n|1| Agregar Instrumento \n|2| Vender Instrumento \n|3| Consultar Inventario \n|4| Cierre \n");
+                    StdOut.println("\n~~~~~Bienvenido~~~~~\n*¿Qué desea hacer?\n\n|1| Agregar Instrumento \n|2| Vender Instrumento \n|3| Consultar Inventario \n|4| Cierre \n");
                     String opcionString = StdIn.readString();
                     opcionInt = Integer.parseInt(opcionString);
                 } catch (Exception e) {
@@ -61,7 +57,7 @@ public class SistemaImpl implements Sistema {
                     if(leerArchivo()){
                         StdOut.println("Los productos se agregaron correctamente.");
                     }else{
-                        StdOut.println("Los productos NO fueron agregados correctamente");
+                        StdOut.println("Los productos NO fueron agregados");
                     }
 
                     break;
@@ -113,7 +109,7 @@ public class SistemaImpl implements Sistema {
                     codigoInt = Integer.parseInt(codigoString);
 
                     }catch (Exception e){
-                     StdOut.println("Ingrese un codigo de numeros.");
+                     StdOut.println("Ingrese un codigo de numeros\n");
                      continue;
                 }
                 break;
@@ -129,7 +125,7 @@ public class SistemaImpl implements Sistema {
             instrumento = listaInstrumentos.obtener(codigoInt);
 
             if (instrumento == null) {
-                StdOut.println("El producto no existe");
+                StdOut.println("El producto no existe\n");
             }else{
                 break;
             }
@@ -255,7 +251,7 @@ public class SistemaImpl implements Sistema {
         while(!terminar) {
 
             try {
-                StdOut.println("Consultar Inventario:\n");
+                StdOut.println("\nConsultar Inventario:\n");
                 StdOut.print("|1| Desplegar los instrumentos\n|2| Buscar instrumento por Codigo\n|3| volver\nIngrese una opcion: ");
                 String opcionString = StdIn.readString();
                 opcionInt = Integer.parseInt(opcionString);
@@ -279,12 +275,12 @@ public class SistemaImpl implements Sistema {
                         int codigo = -1;
                         while (true) {
                             try {
-                                StdOut.println("Ingrese el codigo del instrumento (000 PARA VOLVER)");
+                                StdOut.println("\nIngrese el codigo del instrumento (000 PARA VOLVER)");
                                 String codigoString = StdIn.readString();
                                 codigo = Integer.parseInt(codigoString);
 
                             } catch (Exception e) {
-                                StdOut.println("|ERROR| Los codigos son numericos");
+                                StdOut.println("|ERROR| Los codigos son numericos\n");
                                 continue;
                             }
                             break;
