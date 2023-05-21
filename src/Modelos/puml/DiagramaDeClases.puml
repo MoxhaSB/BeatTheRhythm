@@ -1,29 +1,74 @@
 @startuml
 skin rose
 
-package codigo {
+package codigo{
 
 class ListaInstrumentos{
+
+-cantidadActual: int
+-cantidadMaxima: int
+-listaInstrumento: Instrumento[]
+
++ListaInstrumentos(cantidadMaxima: int)
++getCantidadActual(): int
++obtener(codigo: int): Instrumento
++buscar(codigo: int): boolean
++eliminar(codigo: int): boolean
++agregar(instrumento: Instrumento): void
++entregarInstrumento(int i): Instrumento
 
 }
 
 class Instrumento{
 
+-codigo: int
+-precio: int
+-stock: int
+-nombre: String
+
++Intrumento(codigo: int, precio: int, stock: int, nombre: String)
++getCodigo(): int
++getPrecio(): int
++getStock(): int
++getNombre(): String
++toString(): String
 }
 
-class Percusion{
+class Percusion extends Instrumento{
 
+-tipoPercusion: String
+-materialConstruccion: String
+-altura: String
+
++Percusion(codigo: int, precio: int, Stock: int, nombre: String, tipoPercusion: String, materialConstruccion: String, altura: String)
++getTipoPercusion(): String
++getMaterialConstruccion(): String
++getAltura(): String
 }
 
-class Viento{
+class Viento extends Instrumento{
 
+-materialConstruccion: String
+
++Viento(codigo: int, precio: int, Stock: int, nombre: String, materialConstruccion: String)
++getMaterialConstruccion(): String
 }
 
-class Cuerda{
+class Cuerda extends Instrumento{
 
+-tipoCuerda: String
+-numCuerdas: int
+-materialConstruccion: String
+-tipo: String
+
++Cuerda(codigo: int, precio: int, Stock: int, nombre: String, tipoCuerda: String, numCuerdas: int, materialConstruccion: String, tipo: String)
++getTipoCuerda(): String
++getNumCuerdas(): int
++getMaterialConstruccion(): String
++getTipo(): String
 }
 
-ListaInstrumentos o--> Instrumento
+ListaInstrumentos o--> Instrumento: almacena
 Instrumento <-- Percusion
 Instrumento <-- Viento
 Instrumento <-- Cuerda
@@ -35,18 +80,21 @@ SistemaImpl --> ListaInstrumentos
 package Sistema{
 
 Interface Sistema{
-    +menu() : void
-    +venderInstrumento() : void
-    +leerArchivo() : void
-    +boleta(int precio, Instrumento instrumento) : void
 
-
++menu() throws IOException : void
++venderInstrumento() : void
++consultarInventario(): void
++agregarInstrumento() throws IOException : boolean
++cierre() throws IOException : boolean
 }
 
 class SistemaImpl implements Sistema{
 
-    +SistemaImpl()
-     -listaInstrumentos : ListaInstrumentos
+-listaInstrumentos: ListaInstrumentos
+
++SistemaImpl()
++desplegarInstrumentos() : void
++boleta(precio: int, instrumento: Instrumento): void
 
 }
 

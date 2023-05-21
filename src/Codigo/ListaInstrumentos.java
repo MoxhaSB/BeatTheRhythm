@@ -124,34 +124,6 @@ public class ListaInstrumentos {
     }
 
     /**
-     * Metodo que despliega los instrumentos
-     */
-    public void desplegarInstrumentos(){
-
-        //verificar instancia del instrumento
-        for (int i = 0; i <this.cantidadActual ; i++) {
-
-
-            if (this.listaInstrumento[i] instanceof Cuerda) {
-                StdOut.println("|CUERDA| :\n");
-                StdOut.println(this.listaInstrumento[i].toString());
-
-            } else if (this.listaInstrumento[i] instanceof Viento) {
-                StdOut.println("|VIENTO| :\n");
-                StdOut.println(this.listaInstrumento[i].toString());
-
-            } else if (this.listaInstrumento[i] instanceof Percusion) {
-                StdOut.println("|PERCUSION| :\n");
-                StdOut.println(this.listaInstrumento[i].toString());
-
-            }
-
-
-        }
-
-    }
-
-    /**
      * metodo que retorna el isntrumento segun su posicion
      * @param i la posicion de la lista
      * @return el instrumento
