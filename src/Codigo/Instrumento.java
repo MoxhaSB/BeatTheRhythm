@@ -59,6 +59,14 @@ public class Instrumento {
     }
 
     /**
+     * metodo que cambia el stock
+     * @param stock cantidad de isnturmentos del mismo tipo
+     */
+    public void setStock(int stock){
+        this.stock= stock;
+    }
+
+    /**
      * metodo qque retorna el nombre
      * @return nombre del instrumento
      */
@@ -71,6 +79,6 @@ public class Instrumento {
      * @return
      */
     public String toString(){
-        return "Nombre: " + this.nombre + " Código: " + this.codigo + " Stock: " + this.stock + " Precio: " + this.precio;
+        return "| Nombre: " + this.nombre + " | Código: " + this.codigo + " | Stock: " + this.stock + " | Precio: " + this.precio;
     }
 }

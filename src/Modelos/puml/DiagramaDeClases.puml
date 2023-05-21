@@ -30,6 +30,7 @@ class Instrumento{
 +getCodigo(): int
 +getPrecio(): int
 +getStock(): int
++setStock(int stock) : void
 +getNombre(): String
 +toString(): String
 }
@@ -44,6 +45,7 @@ class Percusion extends Instrumento{
 +getTipoPercusion(): String
 +getMaterialConstruccion(): String
 +getAltura(): String
++toString() : String
 }
 
 class Viento extends Instrumento{
@@ -52,6 +54,7 @@ class Viento extends Instrumento{
 
 +Viento(codigo: int, precio: int, Stock: int, nombre: String, materialConstruccion: String)
 +getMaterialConstruccion(): String
++toString() : String
 }
 
 class Cuerda extends Instrumento{
@@ -66,12 +69,11 @@ class Cuerda extends Instrumento{
 +getNumCuerdas(): int
 +getMaterialConstruccion(): String
 +getTipo(): String
++toString() : String
 }
 
 ListaInstrumentos o--> Instrumento: almacena
-Instrumento <-- Percusion
-Instrumento <-- Viento
-Instrumento <-- Cuerda
+
 
 }
 

@@ -60,4 +60,12 @@ public class Percusion extends Instrumento{
     public String getAltura() {
         return altura;
     }
+
+    /**
+     * metodo que devuelve los datos del instrumento percusion de forma ordenada
+     * @return datos del instrumento
+     */
+    public String toStringPercusion(){
+        return " | Tipo Percusion: " + this.tipoPercusion + " | Material: " + this.materialConsutruccion + " | Altura: " + this.altura;
+    }
 }

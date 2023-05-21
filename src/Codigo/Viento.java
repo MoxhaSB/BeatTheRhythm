@@ -25,10 +25,18 @@ public class Viento extends Instrumento{
     }
 
     /**
-     * Metodo que devuelve el material de construccion del instrumento
-     * @return el material de construccion
+     * metodo que devuelve el material de construccion del instrumento
+     * @return material
      */
     public String getMaterialConstruccion() {
         return materialConstruccion;
+    }
+
+    /**
+     * metodo que retorna el material de forma ordenada
+     * @return material
+     */
+    public String toStringViento(){
+        return " | Material: " + this.materialConstruccion;
     }
 }

@@ -10,14 +10,17 @@ public class Cuerda extends Instrumento{
      * tipo de cuerda que tiene el instrumento
      */
     private String tipoCuerda;
+
     /**
      * cantidad de cuerdas que tiene el instrumento
      */
     private int numCuerdas;
+
     /**
-     * material del cal está hecho el instrumento
+     * material del cual está hecho el instrumento
      */
     private String materialConstruccion;
+
     /**
      * tipo de instrumento, si es acustico o electrico
      */
@@ -74,4 +77,13 @@ public class Cuerda extends Instrumento{
     public String getTipo() {
         return tipo;
     }
+
+    /**
+     * metodo que retorna los datos del instrumento cuerda de forma ordenada
+     * @return datos instrumento cuerda
+     */
+    public String toStringCuerda(){
+        return " | Tipo cuerda: " + this.tipoCuerda + " | Numero cuerdas: " + this.numCuerdas + " | Material: " + this.materialConstruccion + " | Tipo: " + this.tipo;
+    }
+
 }
